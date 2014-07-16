@@ -2,3 +2,7 @@
 <div>
   Birth date: <%= @student.birth_date %>
 </div>
+
+<%= link_to 'edit', controller: 'students', action: 'edit', id: @student %>
+
+<%= link_to "delete", @student, method: :delete %>
