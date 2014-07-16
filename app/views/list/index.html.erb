@@ -1,0 +1,18 @@
+<%=h "Students list:"%>
+<br>
+<br>
+<% @students_list.each do |inner| %>
+  <%inner.each do |t|%>
+    <%=h t %>
+  <% end %>
+  <br>
+<% end %>
+
+<p><input id="name" name="name" type="text" /></p>
+<p><input id="age" name="age" type="text" /></p>
+<button name="button_add" type="submit">Add</button>
+<button name="button_remove" type="submit">Remove</button>
+<button name="button_update" type="submit">Update</button>
+
+<%= button_to "New", action: "add_student" %>
+
