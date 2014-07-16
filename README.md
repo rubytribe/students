@@ -1,2 +1,4 @@
-students
+Students
 ========
+
+Students management web application
