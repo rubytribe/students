@@ -1,0 +1,17 @@
+<h1> Students </h1>
+
+<table>
+  <tr>
+    <th> First name </th>
+    <th> Last name </th>
+    <th> Birth date </th>
+  </tr>
+  
+  <% @students.each do |s| %>
+    <tr>
+      <td> <%= s.first_name %> </td>
+      <td> <%= s.last_name %> </td>
+      <td> <%= s.birth_date %> </td>
+    </tr>
+  <% end %>
+</table>
