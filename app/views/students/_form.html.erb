@@ -6,7 +6,7 @@
   <%= f.text_field :last_name %>
   
   <%= f.label "Birth date" %>
-  <%= f.date_select :birth_date, start_year: 1900, order: [:day, :month, :year] %>
+  <%= f.date_select :birth_date, start_year: 1900, end_year: Time.now.year, order: [:day, :month, :year] %>
   
   <%= f.submit %>
   

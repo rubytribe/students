@@ -1,3 +1,5 @@
+# refactor test without before blocks
+
 require 'rails_helper'
 
   describe 'Student pages' do
@@ -19,7 +21,9 @@ require 'rails_helper'
       visit '/students/new'
       fill_in 'student_first_name', :with => 'John'
       fill_in 'student_last_name', :with => 'Doe'
-      fill_in 'student_birth_date', :with => '10-12-1990'
+      select '10', from: "student_birth_date_3i"
+      select 'November', from: "student_birth_date_2i"
+      select '1990', from: "student_birth_date_1i"
       click_on 'Create Student'
       visit students_path
     end
@@ -32,7 +36,9 @@ require 'rails_helper'
         visit "/students/#{student.id}/edit"
         fill_in 'student_first_name', :with => 'John'
         fill_in 'student_last_name', :with => 'Doe'
-        fill_in 'student_birth_date', :with => '10-12-1990'
+        select '10', from: "student_birth_date_3i"
+        select 'November', from: "student_birth_date_2i"
+        select '1990', from: "student_birth_date_1i"
         click_on 'Update Student'
         visit students_path
       end

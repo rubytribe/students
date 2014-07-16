@@ -1,3 +1,5 @@
+# refactor and add fixtures
+
 require 'rails_helper'
 
 
