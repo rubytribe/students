@@ -39,5 +39,6 @@ require 'rails_helper'
       it {should have_content('John') }
       it {should_not have_content('David')}
     end
+    
   
 end
