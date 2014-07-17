@@ -1,0 +1,4 @@
+%h1
+	= "Edit"
+= form_for @stud, method: :put, url: stud_path(id: @stud.id) do |u|
+	= render partial: 'submit_form', locals: { u: u }

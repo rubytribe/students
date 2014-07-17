@@ -1,0 +1,13 @@
+= u.label :first_name
+= u.text_field :first_name
+%br
+= u.label :last_name
+= u.text_field :last_name
+%br
+= u.label :birth_date
+= u.date_select :birth_date, start_year: 1900, end_year: Time.now.year, order: [:day, :month, :year]
+%br
+= u.label :email
+= u.text_field :email
+%br
+= u.submit "Save"
