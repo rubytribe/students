@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
