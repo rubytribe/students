@@ -14,12 +14,10 @@ require 'rails_helper'
 
 
     specify 'new' do
-      visit '/students/new'
+      visit new_student_path
       fill_in 'student_first_name', :with => 'John'
       fill_in 'student_last_name', :with => 'Doe'
-      select '10', from: "student_birth_date_3i"
-      select 'November', from: "student_birth_date_2i"
-      select '1990', from: "student_birth_date_1i"
+      fill_in 'student_birth_date', :with => '1990-10-12'
       click_on 'Create Student'
       visit students_path
       expect(page).to have_content('John')
@@ -27,7 +25,7 @@ require 'rails_helper'
     
     specify 'edit' do
       student = students(:david)
-      visit "/students/#{student.id}/edit"
+      visit edit_student_path(student.id)
       fill_in 'student_first_name', :with => 'John'
       click_on 'Update Student'
       visit students_path
