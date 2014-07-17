@@ -2,20 +2,16 @@
 
 <%= link_to "New Student", controller: "students", action: "new" %>
 
+<%= will_paginate %>
+
 <table>
   <tr>
     <th> First name </th>
     <th> Last name </th>
     <th> Birth date </th>
   </tr>
+  <%= render @students %>
+</table>  
   
-  <% @students.each do |s| %>
-    <tr>
-      <td> <%= s.first_name %> </td>
-      <td> <%= s.last_name %> </td>
-      <td> <%= s.birth_date %> </td>
-      <td> <%= link_to "view", s %>
-      <td> <%= link_to "delete", s, method: :delete %> </td>
-    </tr>
-  <% end %>
-</table>
+<%= will_paginate %>
+

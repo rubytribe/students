@@ -40,6 +40,7 @@ gem 'spring',        group: :development
 
 
 gem 'therubyracer'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'rspec-rails'
