@@ -41,6 +41,7 @@ gem 'spring',        group: :development
 
 gem 'therubyracer'
 gem 'will_paginate'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'rspec-rails'
