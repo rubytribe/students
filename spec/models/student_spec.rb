@@ -1,10 +1,9 @@
-# refactor and add fixtures
-
 require 'rails_helper'
 
 
 describe Student do
-  before {@student = Student.new(first_name: 'John', last_name: 'Doe', birth_date: '1990-10-12')}
+  fixtures :students
+  before {@student = Student.first}
   
   subject {@student}
   
@@ -14,19 +13,21 @@ describe Student do
   
   it {should be_valid}
   
-  describe 'when first name is not present' do
-    before {@student.first_name = ''}
-    it {should_not be_valid}
-  end
   
-  describe 'when last name is not present' do
-    before {@student.last_name = ''}
-    it {should_not be_valid}
-  end
+  describe 'validation' do
+    specify 'when first name is not present' do
+      @student.first_name = ''
+      expect(@student).not_to be_valid
+    end
   
-  describe 'when birth_date is not present' do
-    before {@student.birth_date = ''}
-    it {should_not be_valid}
-  end
+    specify 'when last name is not present' do
+      @student.last_name = ''
+      expect(@student).not_to be_valid
+    end
   
+    specify 'when birth_date is not present' do
+      @student.birth_date = ''
+      expect(@student).not_to be_valid
+    end
+  end
 end
