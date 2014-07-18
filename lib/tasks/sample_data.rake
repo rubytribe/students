@@ -17,7 +17,8 @@ namespace :db do
   
   def make_courses
     courses = ['Computer Science', 'Philosopy', 'Electrical Engineering', 'Literature',
-       'English', 'Mathematics', 'Astromony', 'Chemistry']
+       'English', 'Mathematics', 'Astromony', 'Chemistry', 'Music', 'Psychology',
+       'Physics', 'Genetics', 'Sociology', 'Biology', 'Geograpyh', 'Economics', 'Antropology']
     courses.each do |c|
       Course.create(name: c)
     end

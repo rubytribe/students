@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
   before_action :find_course, only: [:show, :edit, :update, :destroy]
   
   def index
-    @courses = Course.paginate(page: params[:page], per_page: 5)
+    @courses = Course.paginate(page: params[:page], per_page: 10)
   end
 
   def new
@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
 
 
   def update
-    if @course.update
+    if @course.update(course_params)
       redirect_to courses_path
     else
       render 'edit'
