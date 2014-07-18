@@ -1,0 +1,9 @@
+<h1>Details</h1>
+First Name: <%= @student.first_name %> <br>
+Last Name: <%= @student.last_name %> <br>
+Birth Date: <%= @student.birth_date %> <br>
+Created At: <%= @student.created_at %> <br>
+ <%= button_to 'Delete', @student, class: "button", method: :delete, data: { confirm: 'Are you sure?' } %>
+ <%= button_to 'Edit', edit_student_path(@student.id), class: "button", method:  :get, :action => :edit %>
+<br>
+

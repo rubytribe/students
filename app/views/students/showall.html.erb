@@ -1,0 +1,6 @@
+<h1> All Students</h1>
+<% @student.each do |x| %>
+Student: <%= x.first_name %> <%= x.last_name %>  <%= button_to 'More', x , class: "button", :method => :get %>
+
+<br>
+<%end%>

@@ -1,0 +1,13 @@
+<h1>Update</h1>
+<%= form_for(@student) do |f| %>
+  <%= f.label "First Name" %> 
+  <%= f.text_field :first_name %> <br>
+  <%= f.label "Last Name" %>
+  <%= f.text_field :last_name %><br>
+
+  <%= f.label "Birth Date" %>
+  <%= f.date_select :birth_date, :start_year => Date.current.year, :end_year => 1975 %><br>
+
+  <%= f.submit %>
+
+<% end %>
