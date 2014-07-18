@@ -1,6 +1,16 @@
 class Student < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :birth_date, presence: true
+  validate :date_validator
+  
+  
+  
+  private
+    
+    def date_validator
+      if self.birth_date.nil? or self.birth_date > Date.today
+        errors.add(:Date, 'is blank or invalid')
+      end
+    end
   
 end

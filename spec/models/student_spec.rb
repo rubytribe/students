@@ -29,5 +29,15 @@ describe Student do
       @student.birth_date = ''
       expect(@student).not_to be_valid
     end
+    
+    specify 'when birth date is invaild' do
+      @student.birth_date = 'abcd'
+      expect(@student).not_to be_valid
+    end
+    
+    specify 'when birth date is in future' do
+      @student.birth_date = Date.new(Date.today.year + 1)
+      expect(@student).not_to be_valid
+    end
   end
 end
