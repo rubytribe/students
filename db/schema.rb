@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140716094719) do
 
-  create_table "firsts", force: true do |t|
-    t.string   "name"
-    t.string   "Last"
-    t.date     "birthday"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "students", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
