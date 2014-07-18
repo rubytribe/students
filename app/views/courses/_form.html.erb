@@ -1,3 +1,5 @@
+<%= render 'shared/error_messages', object: @course %>
+
 <%= form_for @course do |f| %>
   <%= f.label 'Course name'%>
   <%= f.text_field :name %>
