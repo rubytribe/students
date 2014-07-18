@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @student.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @student.last_name %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @student.bdate %>
+</p>
+<p>
+<div style="display:inline">
+	<%= button_to 'Edit', edit_student_path(@student) , class: "button", :method => :get%>
+	<%= button_to 'Back', students_path, class: "button", :method => :get %>
+</div>
+</p>
