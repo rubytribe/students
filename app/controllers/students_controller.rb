@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :find_student, only: [:show, :edit, :update, :destroy]
+  before_action :find_student, only: [:show, :edit, :update, :destroy, :courses]
   
   
   def index
@@ -36,6 +36,10 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     redirect_to students_path
+  end
+  
+  def courses
+    @courses = @student.courses
   end
   
   private

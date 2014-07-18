@@ -1,0 +1,7 @@
+<%= form_tag course_memberships_path, method: :post do %>
+  <%= label_tag 'student_id', 'Student id' %>
+  <%= text_field_tag 'student_id'%>
+  
+  <%= label_tag 'course_id', 'Course id'%>
+  <%= text_field_tag 'course_id'%>
+<% end %>
