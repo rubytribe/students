@@ -24,6 +24,7 @@ class CoursesController < ApplicationController
 
   def update
     @course.update(course_params)
+    redirect_to @course
   end
 
   def destroy
