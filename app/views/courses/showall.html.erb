@@ -1,0 +1,5 @@
+<h1> All courses</h1>
+<% @course.each do |x| %>
+ <p> <%= x.name %> <%= button_to 'More', x , class: "button", :method => :get %></p>
+
+<% end %>

@@ -1,0 +1,4 @@
+<h1>Details</h1>
+<%= @course.name %>
+ <%= button_to 'Delete', @course, class: "button", method: :delete, data: { confirm: 'Are you sure?' } %>
+ <%= button_to 'Edit', edit_course_path(@course.id), class: "button", method:  :get, :action => :edit %>
