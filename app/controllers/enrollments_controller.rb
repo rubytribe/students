@@ -1,7 +1,4 @@
 class EnrollmentsController < ApplicationController
-
-  def new
-  end
   
   def create
     student = Student.find(params[:student_id])
@@ -10,7 +7,8 @@ class EnrollmentsController < ApplicationController
   end
   
   def destroy
-    
+    student = Student.find(params[:student_id])
+    student.courses.delete(params[:course_id])
   end
   
 end

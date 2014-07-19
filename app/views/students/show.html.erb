@@ -3,6 +3,17 @@
   Birth date: <%= @student.birth_date %>
 </div>
 
+<div>
 <%= link_to 'edit', controller: 'students', action: 'edit', id: @student %>
 <%= link_to "delete", @student, method: :delete %>
+<%= link_to 'Add course', add_course_path %>
+</div>
 
+<% if @courses.any? %>
+<h3> Courses </h3>
+  <ul>
+    <% @courses.each do |c| %>
+      <li> <%= c.name %> </li>
+    <% end %>
+  </ul>
+<% end %>

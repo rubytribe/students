@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
-  before_action :find_course, only: [:show, :edit, :update, :destroy, :students]
+  before_action :find_course, only: [:show, :edit, :update, :destroy, :students, :add_student]
+  before_action :get_students, only: [:show, :students]
   
   def index
     @courses = Course.paginate(page: params[:page], per_page: 10)
@@ -43,7 +44,10 @@ class CoursesController < ApplicationController
   
   
   def students
-    @students = @course.students
+  end
+  
+  def add_student
+    @students = Student.all
   end
 
   
@@ -58,6 +62,10 @@ class CoursesController < ApplicationController
     
     def find_course
       @course = Course.find(params[:id])
+    end
+    
+    def get_students
+      @students = @course.students
     end
   
 end

@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :enrollments, only: [:create, :destroy, :new]
+  resources :enrollments, only: [:create, :destroy]
+  
+  get 'courses/:id/add_student' => 'courses#add_student', as: :add_student
+  get 'students/:id/add_course' => 'students#add_course', as: :add_course
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

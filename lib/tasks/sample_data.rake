@@ -29,7 +29,8 @@ namespace :db do
     students = Student.all.limit(10)
     students.each do |s|
       5.times do
-      s.courses << Course.find(rand(1..10))
+      course = Course.find(rand(1..10))
+      s.courses << course unless s.courses.include?(course)
       end
     end
   end

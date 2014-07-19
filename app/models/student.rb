@@ -6,7 +6,9 @@ class Student < ActiveRecord::Base
   validates :last_name, presence: true
   validate :date_validator
   
-  
+  def full_name
+    "#{first_name} #{last_name}"
+  end
   
   private
     

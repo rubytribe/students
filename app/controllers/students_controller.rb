@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
-  before_action :find_student, only: [:show, :edit, :update, :destroy, :courses]
+  before_action :find_student, only: [:show, :edit, :update, :destroy, :courses, :add_course]
+  before_action :get_courses, only: [:show, :courses]
   
   
   def index
@@ -39,7 +40,10 @@ class StudentsController < ApplicationController
   end
   
   def courses
-    @courses = @student.courses
+  end
+  
+  def add_course
+    @courses = Course.all
   end
   
   private
@@ -52,6 +56,10 @@ class StudentsController < ApplicationController
     
     def find_student
       @student = Student.find(params[:id])
+    end
+    
+    def get_courses
+      @courses = @student.courses
     end
   
 end
