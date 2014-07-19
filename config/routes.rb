@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   end
   resources :courses do
     member do
-      get :courses
+      get :students
     end
   end
   
-  resources :course_memberships, only: [:create, :destroy, :new]
+  resources :enrollments, only: [:create, :destroy, :new]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

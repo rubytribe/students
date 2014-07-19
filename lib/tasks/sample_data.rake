@@ -3,6 +3,7 @@ namespace :db do
   task populate: :environment do
     make_students
     make_courses
+    make_enrollments
   end
   
   def make_students
@@ -21,6 +22,15 @@ namespace :db do
        'Physics', 'Genetics', 'Sociology', 'Biology', 'Geograpyh', 'Economics', 'Antropology']
     courses.each do |c|
       Course.create(name: c)
+    end
+  end
+  
+  def make_enrollments
+    students = Student.all.limit(10)
+    students.each do |s|
+      5.times do
+      s.courses << Course.find(rand(1..10))
+      end
     end
   end
   

@@ -1,7 +1,7 @@
-class CourseMembershipsController < ApplicationController
+class EnrollmentsController < ApplicationController
+
   def new
   end
-  
   
   def create
     student = Student.find(params[:student_id])
@@ -14,4 +14,3 @@ class CourseMembershipsController < ApplicationController
   end
   
 end
-  

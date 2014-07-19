@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :find_course, only: [:show, :edit, :update, :destroy]
+  before_action :find_course, only: [:show, :edit, :update, :destroy, :students]
   
   def index
     @courses = Course.paginate(page: params[:page], per_page: 10)
@@ -39,6 +39,11 @@ class CoursesController < ApplicationController
   def destroy
     @course.destroy
     redirect_to courses_path
+  end
+  
+  
+  def students
+    @students = @course.students
   end
 
   
