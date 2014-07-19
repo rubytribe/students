@@ -1,5 +1,13 @@
 Students::Application.routes.draw do
+  # get "courses/index"
+  # get "courses/create"
+  # get "courses/show"
+  # get "courses/destroy"
+  # get "courses/update"
+  # get "courses/edit"
+  # get "courses/new"
  resources :students
+ resources :courses
   
    root 'students#index'
   # get 'students/new'
@@ -7,7 +15,8 @@ Students::Application.routes.draw do
   # match '/show',        to:   'students#show',   via: 'get'
   # match '/update',      to:   'students#', via: 'get'
   # match  '/destroy',    to:   'students#destroy', via: 'delete'
-  match '/showall',     to:   'students#showall', via: 'get'      
+  match '/showall',     to:   'students#showall', via: 'get'  
+  match 'allcourses',    to:   'courses#showall', via: 'get'   
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

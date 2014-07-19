@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  attr_accessor :first_name, :last_name, :birth_date
+  #attr_accessor :first_name, :last_name, :birth_date
   def index
   end
 
