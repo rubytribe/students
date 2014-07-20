@@ -33,5 +33,13 @@ require 'rails_helper'
       expect(page).not_to have_content('David')
     end
     
+    xit 'should redirect to last page after creating or editing a student' do
+    end
+    
+    describe 'show' do
+      xit 'shoud redirect back here after adding or removing a course' do
+      end
+    end
+    
   
 end

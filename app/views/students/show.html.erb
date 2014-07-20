@@ -11,9 +11,12 @@
 
 <% if @courses.any? %>
 <h3> Courses </h3>
-  <ul>
-    <% @courses.each do |c| %>
-      <li> <%= c.name %> </li>
+  <table>
+    <% @courses.each do |course| %>
+      <tr>
+        <td> <%= course.name %> </td>
+        <td> <%= link_to 'remove', delete_enrollment_path(student_id: @student.id, course_id: course.id) %> </td>
+      </tr>
     <% end %>
-  </ul>
+  </table>
 <% end %>

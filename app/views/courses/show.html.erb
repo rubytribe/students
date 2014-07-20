@@ -11,9 +11,11 @@
 
 <% if @students.any? %>
 <h3> Enrolled students </h3>
-  <ul>
+  <table>
     <% @students.each do |s| %>
-      <li> <%= s.first_name %> <%= s.last_name %> </li>
+     <tr> 
+        <td> <%= s.first_name %> <%= s.last_name %> </td>
+        <td> <%= link_to 'remove', delete_enrollment_path(student_id: s.id, course_id: @course.id)%>
     <% end %>
   </ul>
 <% else %>

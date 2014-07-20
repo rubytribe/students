@@ -45,6 +45,7 @@ class StudentsController < ApplicationController
   def add_course
     @courses = Course.all
   end
+
   
   private
   

@@ -27,4 +27,13 @@ describe 'Course pages' do
     expect(page).to have_content('Music')
     expect(page).not_to have_content('Mathematics')
   end
+  
+  xit 'should redirect to last page after creating or editing a course' do
+  end
+  
+  describe 'show' do
+    xit 'shoud redirect back here after adding or removing a student' do
+    end
+  end
+  
 end
