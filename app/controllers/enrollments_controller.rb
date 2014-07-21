@@ -4,8 +4,8 @@ class EnrollmentsController < ApplicationController
     student = Student.find(params[:student_id])
     begin
       student.courses << Course.find(params[:course_id])
-      redirect_to students_path
     rescue
+    ensure
       redirect_to students_path
     end
   end

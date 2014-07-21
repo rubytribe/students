@@ -46,10 +46,8 @@ require 'rails_helper'
     
     
     describe 'show' do
-      before do
-        visit student_path(@student)
-        save_and_open_page
-      end
+      before {visit student_path(@student)}
+
       
       it "should list the student's name" do
         expect(page).to have_content('David')
