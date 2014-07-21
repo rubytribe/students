@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
-      redirect_to students_path
+      redirect_to student_path(@student)
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class StudentsController < ApplicationController
   
   def update
     if @student.update(student_params)
-      redirect_to students_path
+      redirect_to student_path(@student)
     else
       render 'edit'
     end
@@ -36,7 +36,7 @@ class StudentsController < ApplicationController
   
   def destroy
     @student.destroy
-    redirect_to students_path
+    redirect_back_or(students_path)
   end
   
   def courses

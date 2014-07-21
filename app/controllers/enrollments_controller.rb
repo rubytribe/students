@@ -6,14 +6,14 @@ class EnrollmentsController < ApplicationController
       student.courses << Course.find(params[:course_id])
     rescue
     ensure
-      redirect_to students_path
+      redirect_back_or('/')
     end
   end
   
   def destroy
     student = Student.find(params[:student_id])
-    student.courses.delete(params[:course_id])
-    redirect_to students_path
+    student.courses.delete(Course.find(params[:course_id]))
+    redirect_back_or('/')
   end
   
 end

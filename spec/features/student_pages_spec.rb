@@ -30,8 +30,8 @@ require 'rails_helper'
         expect(page).to have_content('John')
       end
       
-      it 'should redirect back to students index' do
-        expect(current_path).to eq(students_path)
+      it 'should redirect to the created student' do
+        expect(current_path).to eq(student_path(Student.find_by_last_name('Doe')))
       end
     end
     
