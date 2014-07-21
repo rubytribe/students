@@ -3,4 +3,6 @@ class Course < ActiveRecord::Base
   has_many :students, through: :enrollment
   
   validates :name, presence: true
+  
+  default_scope {order('name')}
 end

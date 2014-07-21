@@ -1,7 +1,14 @@
 <h3> Select a course </h3>
-<%= form_tag enrollments_path, method: :post do %>
-  <%= select_tag 'course_id', options_from_collection_for_select(@courses, 'id', 'name') %>
-  <%= hidden_field_tag 'student_id', @student.id %>
-  <%= submit_tag 'Submit' %>
-<% end %>
+  <%= will_paginate @courses %>
+  
+  <table>
+    <% @courses.each do |c| %>
+    <tr>
+      <td> <%= c.name %> </td>
+      <td> <%= link_to 'Add', enrollments_path(student_id: @student.id, course_id: c.id), method: 'post' %> </td>
+    </tr>
+    <% end %>
+  </table>
+  
+  <%= will_paginate @courses %>
   

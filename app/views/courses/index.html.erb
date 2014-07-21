@@ -2,12 +2,15 @@
 
 <%= link_to 'Add Course', new_course_path %>
 
-<ul>
+
 <%= will_paginate %>
+
   <table>
     <tr>
       <th> Course name </th>
     </tr>
   <%= render @courses %>
+  </table>
+  
 <%= will_paginate %>
-</ul>
+

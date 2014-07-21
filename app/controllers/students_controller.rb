@@ -43,7 +43,7 @@ class StudentsController < ApplicationController
   end
   
   def add_course
-    @courses = Course.all
+    @courses = Course.paginate(page: params[:page], per_page: 10)
   end
 
   

@@ -6,8 +6,10 @@ class Student < ActiveRecord::Base
   validates :last_name, presence: true
   validate :date_validator
   
+  default_scope {order('last_name, first_name')}
+  
   def full_name
-    "#{first_name} #{last_name}"
+    "#{last_name} #{first_name}"
   end
   
   private
