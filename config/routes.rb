@@ -1,14 +1,7 @@
 Rails.application.routes.draw do
-  resources :students do
-    member do
-      get :courses
-    end
-  end
-  resources :courses do
-    member do
-      get :students
-    end
-  end
+  resources :students
+  resources :courses
+
   
   resources :enrollments, only: [:create]
   get 'emrollments/destroy' => 'enrollments#destroy', as: :delete_enrollment
