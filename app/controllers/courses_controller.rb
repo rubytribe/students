@@ -39,7 +39,7 @@ class CoursesController < ApplicationController
   
   def destroy
     @course.destroy
-    redirect_back_or(courses_path)
+    redirect_to(courses_path)
   end
 
   

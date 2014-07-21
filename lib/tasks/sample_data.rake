@@ -26,7 +26,7 @@ namespace :db do
   end
   
   def make_enrollments
-    students = Student.all.limit(10)
+    students = Student.all.limit(10).order('last_name, first_name')
     students.each do |s|
       5.times do
       course = Course.find(rand(1..10))

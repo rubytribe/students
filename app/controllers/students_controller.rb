@@ -36,7 +36,7 @@ class StudentsController < ApplicationController
   
   def destroy
     @student.destroy
-    redirect_back_or(students_path)
+    redirect_to(students_path)
   end
   
   
