@@ -2,8 +2,12 @@ class EnrollmentsController < ApplicationController
   
   def create
     student = Student.find(params[:student_id])
-    student.courses << Course.find(params[:course_id])
-    redirect_to students_path
+    begin
+      student.courses << Course.find(params[:course_id])
+      redirect_to students_path
+    rescue
+      redirect_to students_path
+    end
   end
   
   def destroy
