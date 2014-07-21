@@ -61,8 +61,7 @@ require 'rails_helper'
       describe 'add course for a student' do
         before do
           click_on 'Add course'
-          select 'Chemistry', from: 'course_id'
-          click_on 'Submit'
+          first(:link, 'Add').click
         end
         
         it 'should list the new course' do

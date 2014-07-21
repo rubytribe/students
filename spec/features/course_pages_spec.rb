@@ -56,8 +56,7 @@ describe 'Course pages' do
     describe 'add student to a course' do
       before do
         click_on 'Add student'
-        select 'Jane Peterson', from: 'student_id'
-        click_on 'Submit'
+        page.all('a', text: 'Add').last.click
       end
       
       it 'should list the student' do
