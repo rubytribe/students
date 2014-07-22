@@ -14,6 +14,19 @@
   <strong>Birthday:</strong>
   <%= @student.bdate %>
 </p>
+<td><strong><%= "Courses: " %></strong></td>
+<% @student.courses.each do |course| %>
+      <tr>
+        <td><%= course.course_name %></td>
+      </tr>
+
+
+    <% end %>
+
+
+
+
+
 <p>
 <div style="display:inline">
 	<%= button_to 'Edit', edit_student_path(@student) , class: "button", :method => :get%>

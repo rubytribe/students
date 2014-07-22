@@ -17,4 +17,6 @@ describe "Students" do
       expect(page).to have_content('New student')
     end
   end
+
+  
 end

@@ -14,11 +14,14 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @courses=Course.all
   end
 
   # GET /students/new
   def new
     @student = Student.new
+    @courses= Course.all
+    @student_courses = @student.studentcourse.build
   end
 
   # GET /students/1/edit

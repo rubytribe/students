@@ -1,4 +1,4 @@
-<%= form_for(@student) do |f| %>
+<%= form_for(@student, :html => { :multipart => true }) do |f| %>
   <% if @student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -22,8 +22,18 @@
   <div class="field">
     <%= f.label :birthday %><br>
     <%= f.text_field :bdate, class:  'datepicker', html_input: {value: '1990-03-04'} %>
+  </div>
+  
+<br>
+
+
+<%= fields_for (@student_courses) do |ab|%>
+  <div class="field">
+  <%= ab.label "All Courses" %>
+  <%= collection_select(:courses, :new, @courses, :id, :course_name, {}, {:multiple => true}) %>
 
   </div>
+<% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
