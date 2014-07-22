@@ -5,7 +5,8 @@
     <% @courses.each do |c| %>
     <tr>
       <td> <%= link_to c.name, course_path(c) %> </td>
-      <td> <%= link_to 'Add', enrollments_path(student_id: @student.id, course_id: c.id), method: 'post' %> </td>
+      <td> <%= link_to 'Add', enrollments_path(student_id: @student.id,
+               course_id: c.id, last_url: student_path(@student)), method: 'post' %> </td>
     </tr>
     <% end %>
   </table>

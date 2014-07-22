@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   
   resources :enrollments, only: [:create]
-  get 'emrollments/destroy' => 'enrollments#destroy', as: :delete_enrollment
+  get 'enrollments/destroy' => 'enrollments#destroy', as: :delete_enrollment
   
   get 'students/:id/add_course' => 'students#add_course', as: :add_course
   get 'courses/:id/add_student' => 'courses#add_student', as: :add_student

@@ -15,7 +15,8 @@
     <% @courses.each do |course| %>
       <tr>
         <td> <%= link_to course.name, course_path(course) %> </td>
-        <td> <%= link_to 'remove', delete_enrollment_path(student_id: @student.id, course_id: course.id) %> </td>
+        <td> <%= link_to 'remove', delete_enrollment_path(student_id: @student.id,
+                 course_id: course.id, last_url: student_path(@student)) %> </td>
       </tr>
     <% end %>
   </table>
