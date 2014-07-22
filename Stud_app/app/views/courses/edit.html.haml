@@ -1,0 +1,3 @@
+= "Edit"
+= form_for @course, method: :put , url: course_path(id: @course.id) do |c|
+	= render partial: 'submit_course_form', locals: {c: c}

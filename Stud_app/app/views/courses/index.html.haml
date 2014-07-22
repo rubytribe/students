@@ -1,0 +1,24 @@
+= "All the courses" 
+%br
+%table{ :border => '1'}
+	%thead
+		%tr
+			%td
+				= "Course's name"
+			%td{:colspan => '3'}
+				= "Options"
+	%tbody
+		- @courses.each do |c|
+			%tr 
+				%td
+					= c.name
+				%td
+					= link_to "Update course", edit_course_path(c.id)
+				%td
+					= link_to "Delete course" ,course_path(c.id), method: :delete, data: { confirm: 'Are you sure?' }
+				%td
+					= link_to "Show" , course_path(c.id), method: :get
+= link_to "Create course", new_course_path
+%br
+= link_to "Switch to students", studs_path
+= will_paginate @courses

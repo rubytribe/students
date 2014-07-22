@@ -7,17 +7,16 @@ class StudsController < ApplicationController
 
 
 	def create
-		@stud = Stud.new(params[:stud])
+		@stud = Stud.new(stud_params)
 		if @stud.save
 			redirect_to studs_path
 		else
-			puts @stud.errors.messages
 			render 'new'
 		end
 	end
 
 	def edit
-    @stud = Stud.find(params[:id])
+		@stud = Stud.find(params[:id])
   end
 
 	def update
@@ -38,10 +37,17 @@ class StudsController < ApplicationController
 
 
 	def index
-		@users=Stud.all
+		@users=Stud.paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def show
 		@stud = Stud.find(params[:id])
+		@courses = Course.all
+		@courses_stud = @stud.courses
 	end
+
+	def stud_params
+		params.require(:stud).permit(:first_name, :last_name, :birth_date, :email)
+	end
+      
 end

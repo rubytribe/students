@@ -10,6 +10,8 @@
 				="students's date of birth"
 			%td
 				="student's email"
+			%td{:colspan => '3'}
+				= "Options"
 	%tbody
 
 	- @users.each do |user|
@@ -28,5 +30,8 @@
 				= link_to "Delete student", stud_path(user.id), method: :delete, data: { confirm: 'Are you sure?' }
 			%td
 				= link_to "Show", stud_path(user.id), method: :get
-%center
+				
 = link_to "Add student", new_stud_path
+%br
+= link_to "Switch to courses", courses_path
+= will_paginate @users
