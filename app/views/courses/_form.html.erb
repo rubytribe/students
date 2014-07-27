@@ -1,8 +1,10 @@
 <%= render 'shared/error_messages', object: @course %>
 
-<%= form_for @course do |f| %>
-  <%= f.label 'Course name'%>
-  <%= f.text_field :name %>
-  <%= f.submit %>
+<%= form_for @course, html: {role: 'form'} do |f| %>
+  <div class='formgroup'>
+    <%= f.label 'Course name'%>
+    <%= f.text_field :name, options = {class: 'form-control'} %>
+  </div>
+    <%= f.submit %>
 <% end %>
 

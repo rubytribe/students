@@ -7,4 +7,8 @@ $(document).on('ready page:load', function () {
       yearRange: "-70:-0"
     });
   });
+  $(".clickable-row").click(function() {
+    window.document.location = $(this).attr("href");
+  });
 });
+

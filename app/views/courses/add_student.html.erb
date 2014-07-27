@@ -2,7 +2,7 @@
   
   <%= will_paginate @students %>
   
-  <table>
+  <table class='mytable20'>
     <% @students.each do |s| %>
       <tr>
         <td> <%= link_to s.full_name, student_path(s) %> </td>

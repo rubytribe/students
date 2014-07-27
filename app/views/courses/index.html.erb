@@ -1,13 +1,15 @@
 <h2> Courses </h2>
 
-<%= link_to 'Add Course', new_course_path %>
+<%= link_to 'New Course', new_course_path %>
 
 
 <%= will_paginate %>
-
-  <table>
+ 
+  <table class ='table table-hover'>
     <tr>
       <th> Course name </th>
+      <th> </th>
+      <th> </th>
     </tr>
   <%= render @courses %>
   </table>

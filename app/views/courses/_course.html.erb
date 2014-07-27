@@ -1,5 +1,5 @@
-<tr>
+<tr class='clickable-row', href= <%= course_path(course)%> >
   <td> <%= course.name %> </td>
-  <td> <%= link_to 'view', course %>
+  <td> <%= link_to 'view', course %> </td>
   <td> <%= link_to 'delete', course, method: :delete %> </td>
 </tr>

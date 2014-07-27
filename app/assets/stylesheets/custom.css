@@ -1,3 +1,48 @@
+body {
+  background-color: #E6E3E5;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+.nav {
+  background-color: #575757;
+  width: 100%;
+}
+  
+.navbar.navbar .nav > li > a {
+    color: #BAB5A9;
+}
+
+.navbar.navbar .nav > li > a:hover {
+    color: #918C81;
+}
+
+
 .error {
   color: red;
 }
+
+
+.mytable30 {
+  width: 30%;
+}
+
+.mytable20 {
+  width: 20%;
+}
+
+.link-list a {
+  color: black;
+}
+
+.remove-link {
+  color: #75584C;
+}
+
+.formgroup {
+  margin-bottom: 15px;
+}
+

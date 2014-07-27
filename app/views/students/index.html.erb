@@ -1,14 +1,16 @@
-<h1> Students </h1>
+<h2> Students </h2>
 
 <%= link_to "New Student", controller: "students", action: "new" %>
 
 <%= will_paginate %>
 
-<table>
+<table class='table table-hover'>
   <tr>
     <th> Last name</th>
     <th> First name </th>
     <th> Birth date </th>
+    <th> </th>
+    <th> </th>
   </tr>
   <%= render @students %>
 </table>  

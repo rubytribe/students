@@ -3,20 +3,23 @@
   Birth date: <%= @student.birth_date %>
 </div>
 
-<div>
-<%= link_to 'edit', controller: 'students', action: 'edit', id: @student %>
-<%= link_to "delete", @student, method: :delete %>
-<%= link_to 'Add course', add_course_path %>
-</div>
+<table class='mytable30'>
+  <tr>
+   <td> <%= link_to 'edit', controller: 'students', action: 'edit', id: @student %> </td>
+   <td> <%= link_to "delete", @student, method: :delete %> </td>
+   <td> <%= link_to 'Add course', add_course_path %> </td>
+  </tr>
+</table>
 
 <% if @courses.any? %>
 <h3> Courses </h3>
-  <table>
+  <table class='mytable20'>
     <% @courses.each do |course| %>
       <tr>
-        <td> <%= link_to course.name, course_path(course) %> </td>
+        <td class='link-list'> <%= link_to course.name, course_path(course) %> </td>
         <td> <%= link_to 'remove', delete_enrollment_path(student_id: @student.id,
-                 course_id: course.id, last_url: student_path(@student)) %> </td>
+               course_id: course.id, last_url: student_path(@student)),
+               html_options = {class: 'remove-link'} %> </td>
       </tr>
     <% end %>
   </table>

@@ -1,15 +1,16 @@
 <%= render 'shared/error_messages', object: @student%>
 
-<%= form_for @student do |f| %>
-  <%= f.label "First name" %>
-  <%= f.text_field :first_name %>
+<%= form_for @student, htlm: {role: 'form'} do |f| %>
+  <div class = 'formgroup'>
+    <%= f.label "First name" %>
+    <%= f.text_field :first_name, options = {class: 'form-control'} %>
 
-  <%= f.label "Last name" %>
-  <%= f.text_field :last_name %>
+    <%= f.label "Last name" %>
+    <%= f.text_field :last_name, options = {class: 'form-control'} %>
   
-  <%= f.label "Birth date" %>
-  <%= f.text_field :birth_date, class: 'datepicker' %>
-  
-  <%= f.submit %>
+    <%= f.label "Birth date" %>
+    <%= f.text_field :birth_date, options = {class: 'form-control datepicker'} %>
+  </div>
+    <%= f.submit %>
  
 <% end %>

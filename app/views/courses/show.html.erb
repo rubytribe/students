@@ -2,23 +2,27 @@
   <%= @course.name %>
 </h2>
 
-<div>
-<%= link_to 'edit', edit_course_path(@course) %>
-<%= link_to 'delete', @course, method: :delete %>
-<%= link_to 'Add student', add_student_path %>
-</div>
+<table class='mytable30'>
+  <tr>
+    <td> <%= link_to 'edit', edit_course_path(@course) %> </td>
+    <td> <%= link_to 'delete', @course, method: :delete %> </td>
+    <td> <%= link_to 'Add student', add_student_path %> </td>
+  </tr>
+</table>
 
 
 <% if @students.any? %>
 <h3> Enrolled students </h3>
-  <table>
+  <table class='mytable20'>
     <% @students.each do |s| %>
-     <tr> 
-        <td> <%= link_to s.full_name, student_path(s) %> </td>
+     <tr>
+        <td class='link-list'> <%= link_to s.full_name, student_path(s) %> </td>
         <td> <%= link_to 'remove', delete_enrollment_path(student_id: s.id,
-                 course_id: @course.id, last_url: course_path(@course)) %> </td>
+               course_id: @course.id, last_url: course_path(@course)),
+               html_options = {class: 'remove-link'} %> </td>
+     </tr>
     <% end %>
-  </ul>
+  </table>
 <% else %>
 <h3> No enrolled students </h3>
 <% end %>
