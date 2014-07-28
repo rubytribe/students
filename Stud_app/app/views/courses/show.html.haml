@@ -1,17 +1,12 @@
-
-= "Course informations: "
-%br
-%table{ :border => "1"}
-	%thead
-		%tr
-			%td 
-				="Course name " 
-			%td
-				= @course.name
+.text_header
+	= "Course informations: "
+	%br
+		= "Course name: " 
+		= @course.name
 %br
 
 = "Students fromt the course  #{@course.name} :"
-%table{ :border => "1"}
+%table{  :id => 'users', :class => "table table-hover table-bordered"}
 	%thead
 		%tr
 			%td
@@ -32,7 +27,7 @@
 
 %br
 = "Available students"
-%table{ :border => "1"}
+%table{  :id => 'users', :class => "table table-hover table-bordered"}
 	%thead
 		%tr
 			%td

@@ -1,6 +1,7 @@
-= "Students informations: "
+.header_text
+	= "Students informations: "
 %br
-%table{ :border => "1"}
+%table{ :id => 'users', :class => "table table-hover table-bordered"}
 	%thead
 		%tr
 			%td 
@@ -21,12 +22,11 @@
 				= @stud.birth_date
 			%td
 				= @stud.email
-			%td
 %br
 
 = "Courses where #{@stud.first_name} #{@stud.last_name} is enrolled:"
 %br
-%table{ :border => "1"}
+%table{ :id => 'users', :class => "table table-hover table-bordered"}
 	%thead
 		%tr
 			="Course's name"
@@ -40,7 +40,7 @@
 
 %br
 = "Available courses"
-%table{ :border => "1"}
+%table{:id => 'users', :class => "table table-hover table-bordered"}
 	%thead
 		%tr
 			="Course's name"

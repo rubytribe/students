@@ -1,4 +1,4 @@
-require 'pry'
+
 class StudsController < ApplicationController
 
 	def new
