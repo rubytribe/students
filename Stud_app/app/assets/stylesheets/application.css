@@ -26,9 +26,14 @@ background-image: url('background.jpg');
 }
 
 .text{
-color: #00000;
+color: #11BFD6;
+width:80%;
+margin-left:10%;
+
 }
 .text_header{
-color: #ffffff;
-font-size: 20px;
+margin-top:2%;
+margin-left:10%;
+color: #11BFD6;
+font-size: 16px;
 }

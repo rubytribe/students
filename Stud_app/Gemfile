@@ -11,8 +11,7 @@ gem 'sorcery'
 gem 'pg'
 gem 'protected_attributes'
 gem 'will_paginate', '~> 3.0'
-gem 'sass', '~> 3.3.11'
-gem 'coffee-script', '~> 2.3.0'
+
 group :test do
   gem 'capybara'
   gem 'launchy'

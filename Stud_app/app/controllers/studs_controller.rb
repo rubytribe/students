@@ -9,8 +9,10 @@ class StudsController < ApplicationController
 	def create
 		@stud = Stud.new(stud_params)
 		if @stud.save
+			flash[:notice] = "succesfully registered"
 			redirect_to studs_path
 		else
+			flash[:error] = @user.errors.full_messages.to_sentence
 			render 'new'
 		end
 	end

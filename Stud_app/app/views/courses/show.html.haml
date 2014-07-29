@@ -4,46 +4,46 @@
 		= "Course name: " 
 		= @course.name
 %br
-
-= "Students fromt the course  #{@course.name} :"
-%table{  :id => 'users', :class => "table table-hover table-bordered"}
-	%thead
-		%tr
-			%td
-				="Stus's first name"
-			%td
-				= "Stud's last name"
-			%td
-				= "Options"
-	%tbody
-		- @stud_courses.each do |co|
+.text
+	= "Students fromt the course  #{@course.name} :"
+	%table{  :id => 'users', :class => "table table-hover table-bordered"}
+		%thead
 			%tr
 				%td
-					= co.first_name
+					="Stus's first name"
 				%td
-					=co.last_name
+					= "Stud's last name"
 				%td
-					= link_to "Delete student", enrollement_path(stud_id: co.id, course_id: @course.id), method: :delete, data: { confirm: 'Are you sure?' }
+					= "Options"
+		%tbody
+			- @stud_courses.each do |co|
+				%tr
+					%td
+						= co.first_name
+					%td
+						=co.last_name
+					%td
+						= link_to "Delete student", enrollement_path(stud_id: co.id, course_id: @course.id), method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
-= "Available students"
-%table{  :id => 'users', :class => "table table-hover table-bordered"}
-	%thead
-		%tr
-			%td
-				="Student's first name"
-			%td
-				= "Student's last name"
-			%td
-				= "Options"
-	%tbody
-		- @students.each do |s|
+	%br
+	= "Available students"
+	%table{  :id => 'users', :class => "table table-hover table-bordered"}
+		%thead
 			%tr
 				%td
-					= s.first_name
+					="Student's first name"
 				%td
-					= s.last_name
+					= "Student's last name"
 				%td
-					= link_to "Add stud", enrollements_path(stud_id: s.id, course_id: @course.id), method: :post
-= link_to "Back", courses_path
+					= "Options"
+		%tbody
+			- @students.each do |s|
+				%tr
+					%td
+						= s.first_name
+					%td
+						= s.last_name
+					%td
+						= link_to "Add stud", enrollements_path(stud_id: s.id, course_id: @course.id), method: :post
+	= link_to "Back", courses_path
 
