@@ -56,6 +56,24 @@ margin-bottom: 6px !important;
 max-width: none !important;
 }
 
+.table-hover>tbody>tr:nth-child(odd)>td, 
+.table-hover>tbody>tr:nth-child(odd)>th {
+   background-color: #000000;
+ }
+
+.table-hover thead tr{
+   background-color: #000000;
+}
+
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #000000 !important;
+ }
+
+.table-striped thead tr{
+   background-color: #000000;
+}
 table.dataTable thead .sorting,
 table.dataTable thead .sorting_asc,
 table.dataTable thead .sorting_desc,
@@ -153,17 +171,14 @@ color: white;
 
 .table tbody tr.active:hover td,
 .table tbody tr.active:hover th {
-background-color: #0075b0 !important;
+background-color: #000000 !important;
 }
 
 .table tbody tr.active a {
-color: white;
+color: red;
 }
 
-.table-striped tbody tr.active:nth-child(odd) td,
-.table-striped tbody tr.active:nth-child(odd) th {
-background-color: #017ebc;
-}
+
 
 table.DTTT_selectable tbody tr {
 cursor: pointer;
@@ -191,8 +206,8 @@ position: relative;
 }
 
 ul.DTTT_dropdown.dropdown-menu li:hover a {
-background-color: #0088cc;
-color: white !important;
+background-color: #000000;
+color: black !important;
 }
 
 div.DTTT_collection_background {

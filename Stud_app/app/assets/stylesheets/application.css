@@ -22,7 +22,10 @@
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 body{
-background-image: url('background.jpg');
+  height: 100%;
+  background-image: url('background.jpg');
+  background-height: 100%;
+  overflow: auto;
 }
 
 .text{
@@ -36,4 +39,12 @@ margin-top:2%;
 margin-left:10%;
 color: #11BFD6;
 font-size: 16px;
+}
+.pages{
+  margin-top: 8% !important;
+}
+#back_container{
+  background: #000000;
+
+
 }
