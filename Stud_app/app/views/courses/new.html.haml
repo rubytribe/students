@@ -2,3 +2,4 @@
     = "New course"
 = form_for @course, method: :post, url: courses_path(id: @course.id) do |c|
     = render partial: 'submit_course_form', locals: { c: c }
+= link_to 'Back', courses_path

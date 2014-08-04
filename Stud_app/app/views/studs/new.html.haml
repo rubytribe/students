@@ -2,3 +2,4 @@
     = "New user"
 = form_for @stud, method: :post, url: studs_path(id: @stud.id) do |u|
     = render partial: 'submit_form', locals: { u: u }
+= link_to "Back", studs_path
