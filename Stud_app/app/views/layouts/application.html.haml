@@ -2,6 +2,7 @@
 %html
   %head
     %title 
+      = "Application"
     = stylesheet_link_tag('application', media: 'all')
     = javascript_include_tag('application')
     = csrf_meta_tags
@@ -36,5 +37,4 @@
       .row
         .pages
           = render 'shared/error_messages'
-          = render 'shared/copyrights'
           = yield

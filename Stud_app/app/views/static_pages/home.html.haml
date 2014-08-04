@@ -1,4 +1,13 @@
 .page_format
-  .text_header
+  .text_index
     Welcome to students management.
-    In order to see the next content, you need to be logged in. Press login if you have an acout, or register to create a new one!
+    %br
+    Our application allows you to manage students and courses. 
+    %br
+    Please select one of the categories below:
+    %br
+    %br
+    .options_index
+      %ul
+        %li #{link_to 'Students', studs_path}
+        %li #{link_to 'Courses', courses_path}
