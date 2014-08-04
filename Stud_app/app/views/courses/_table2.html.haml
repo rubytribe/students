@@ -1,0 +1,19 @@
+%table{  :id => 'users', :class => "table table-hover table-bordered"}
+  %thead
+    %tr
+      %td
+        ="Student's first name"
+      %td
+        = "Student's last name"
+      %td
+        = "Options"
+  %tbody
+    - @students.each do |s|
+      %tr
+        %td
+          = s.first_name
+        %td
+          = s.last_name
+        %td
+          = link_to "Add stud", enrollements_path(stud_id: s.id, course_id: @course.id), method: :post
+= link_to "Back", courses_path

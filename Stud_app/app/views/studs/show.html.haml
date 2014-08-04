@@ -2,51 +2,12 @@
 	= "Students informations: "
 %br
 .text
-	%table{ :id => 'users', :class => "table table-hover table-bordered"}
-		%thead
-			%tr
-				%td 
-					="students's first name " 
-				%td
-					="students's last name"
-				%td
-					="students's date of birth"
-				%td
-					="student's email"
-		%tbody
-			%tr
-				%td
-					= @stud.first_name
-				%td
-					= @stud.last_name
-				%td
-					= @stud.birth_date
-				%td
-					= @stud.email
+	= render 'show_table1'
 	%br
 
 	= "Courses where #{@stud.first_name} #{@stud.last_name} is enrolled:"
 	%br
-	%table{ :id => 'users', :class => "table table-hover table-bordered"}
-		%thead
-		%tbody
-			- @courses_stud.each do |co|
-				%tr
-					%td
-						= co.name
-					%td
-						= link_to "Delete course", enrollement_path(stud_id: @stud.id, course_id: co.id), method: :delete, data: { confirm: 'Are you sure?' }
-
+		= render 'show_table2'
 	%br
 	= "Available courses"
-	%table{:id => 'users', :class => "table table-hover table-bordered"}
-		%thead
-		%tbody
-			- @courses.each do |c|
-				%tr
-					%td
-						= c.name
-					%td
-						= link_to "Add course", enrollements_path(stud_id: @stud.id, course_id: c.id), method: :post
-	= link_to "Back", studs_path
-
+	= render 'show_table3'

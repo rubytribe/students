@@ -1,0 +1,21 @@
+%table{ :id => 'users', :class => "table table-hover table-bordered"}
+  %thead
+    %tr
+      %td 
+        ="students's first name " 
+      %td
+        ="students's last name"
+      %td
+        ="students's date of birth"
+      %td
+        ="student's email"
+  %tbody
+    %tr
+      %td
+        = @stud.first_name
+      %td
+        = @stud.last_name
+      %td
+        = @stud.birth_date
+      %td
+        = @stud.email

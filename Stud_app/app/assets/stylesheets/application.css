@@ -21,6 +21,8 @@
  */
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+footer{
+}
 body{
   height: 100%;
   background-image: url('background.jpg');

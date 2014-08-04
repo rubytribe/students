@@ -1,0 +1,18 @@
+%table{  :id => 'users', :class => "table table-hover table-bordered"}
+  %thead
+    %tr
+      %td
+        ="Stus's first name"
+      %td
+        = "Stud's last name"
+      %td
+        = "Options"
+  %tbody
+    - @stud_courses.each do |co|
+      %tr
+        %td
+          = co.first_name
+        %td
+          =co.last_name
+        %td
+          = link_to "Delete student", enrollement_path(stud_id: co.id, course_id: @course.id), method: :delete, data: { confirm: 'Are you sure?' }
